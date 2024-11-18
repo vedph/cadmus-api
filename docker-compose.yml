@@ -1,0 +1,58 @@
+services:
+  # PostgreSQL
+  cadmus-pgsql:
+    image: postgres
+    container_name: cadmus-pgsql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - cadmus-network
+    # volumes:
+      # ensure you have created the var/db/pgsql folder in the host
+      # https://hub.docker.com/r/postgis/postgis
+      # - /var/db/pgsql:/var/lib/postgresql/data
+
+  # MongoDB
+  cadmus-mongo:
+    image: mongo
+    container_name: cadmus-mongo
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    command: mongod --logpath=/dev/null # --quiet
+    ports:
+      - 27017:27017
+    networks:
+      - cadmus-network
+
+  ## Cadmus API
+  cadmus-api:
+    image: vedph2020/cadmus-api:9.0.3
+    container_name: cadmus-api
+    ports:
+      # https://stackoverflow.com/questions/48669548/why-does-aspnet-core-start-on-port-80-from-within-docker
+      - 60380:8080
+    depends_on:
+      - cadmus-mongo
+      - cadmus-pgsql
+    environment:
+      # for Windows use : as separator, for non Windows use __
+      # (see https://github.com/aspnet/Configuration/issues/469)
+      - CONNECTIONSTRINGS__DEFAULT=mongodb://cadmus-mongo:27017/{0}
+      - CONNECTIONSTRINGS__INDEX=Server=cadmus-pgsql;port=5432;Database={0};User Id=postgres;Password=postgres;Include Error Detail=True
+      - SEED__INDEXDELAY=25
+      - MESSAGING__APIROOTURL=http://cadmusapi.azurewebsites.net
+      - MESSAGING__APPROOTURL=http://cadmusapi.com/
+      - MESSAGING__SUPPORTEMAIL=support@cadmus.com
+      - SERILOG__CONNECTIONSTRING=mongodb://cadmus-mongo:27017/cadmus-logs
+      - STOCKUSERS__0__PASSWORD=P4ss-W0rd!
+    networks:
+      - cadmus-network
+
+networks:
+  cadmus-network:
+    driver: bridge

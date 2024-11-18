@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35506.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadmusApi", "CadmusApi\CadmusApi.csproj", "{899B03B6-A051-486C-9D5C-B7EB37D2BB22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Api.Models", "Cadmus.Api.Models\Cadmus.Api.Models.csproj", "{4620278E-A507-4334-B4CF-EBCEE2744BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Api.Controllers", "Cadmus.Api.Controllers\Cadmus.Api.Controllers.csproj", "{79A2DE6E-B62F-4ED6-A84C-504B012319A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Api.Controllers.Import", "Cadmus.Api.Controllers.Import\Cadmus.Api.Controllers.Import.csproj", "{7129E3A1-482B-41F7-93DB-FA8FE218F177}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Api.Services", "Cadmus.Api.Services\Cadmus.Api.Services.csproj", "{5F0A9961-6CC4-444B-B0B4-A2410D01C786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadmus.Api.Config", "Cadmus.Api.Config\Cadmus.Api.Config.csproj", "{C56F60C6-F0D8-4FDD-B1AE-45C8672FEFED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9784C39B-5955-4012-82D6-C9C6A33FD203}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		Pack.bat = Pack.bat
+		Push.bat = Push.bat
+		PushLocal.bat = PushLocal.bat
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{899B03B6-A051-486C-9D5C-B7EB37D2BB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899B03B6-A051-486C-9D5C-B7EB37D2BB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899B03B6-A051-486C-9D5C-B7EB37D2BB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899B03B6-A051-486C-9D5C-B7EB37D2BB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4620278E-A507-4334-B4CF-EBCEE2744BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4620278E-A507-4334-B4CF-EBCEE2744BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4620278E-A507-4334-B4CF-EBCEE2744BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4620278E-A507-4334-B4CF-EBCEE2744BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A2DE6E-B62F-4ED6-A84C-504B012319A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A2DE6E-B62F-4ED6-A84C-504B012319A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A2DE6E-B62F-4ED6-A84C-504B012319A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A2DE6E-B62F-4ED6-A84C-504B012319A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7129E3A1-482B-41F7-93DB-FA8FE218F177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7129E3A1-482B-41F7-93DB-FA8FE218F177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7129E3A1-482B-41F7-93DB-FA8FE218F177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7129E3A1-482B-41F7-93DB-FA8FE218F177}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F0A9961-6CC4-444B-B0B4-A2410D01C786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F0A9961-6CC4-444B-B0B4-A2410D01C786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F0A9961-6CC4-444B-B0B4-A2410D01C786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F0A9961-6CC4-444B-B0B4-A2410D01C786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C56F60C6-F0D8-4FDD-B1AE-45C8672FEFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C56F60C6-F0D8-4FDD-B1AE-45C8672FEFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C56F60C6-F0D8-4FDD-B1AE-45C8672FEFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C56F60C6-F0D8-4FDD-B1AE-45C8672FEFED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
