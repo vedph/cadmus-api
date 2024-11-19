@@ -62,7 +62,7 @@ public static class HostAuthSeedExtensions
             IConfiguration config =
                 serviceProvider.GetRequiredService<IConfiguration>();
 
-            int delay = config.GetValue<int>("SeedDelay");
+            int delay = config.GetValue<int>("Seed:Delay");
             if (delay > 0)
             {
                 logger.LogInformation("Waiting {Delay} seconds...", delay);

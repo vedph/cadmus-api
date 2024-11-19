@@ -25,6 +25,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 10.1.2
+
+- 2024-11-19:
+  - changed name of database seeder delay to `Seed:Delay` (thus `SEED__DELAY` in Docker compose) in `Cadmus.Api.Config`.
+  - added `ASPNETCORE_URLS=http://+:8080` to the sample Docker compose script. This is required to let the API listen on its designated 8080 port, because the default behavior for ASP.NET core is to listen on 5000 (HTTP) and 5001 (HTTPS) ports in development mode. Outside development mode, like in Docker, we need to specify the port explicitly.
+
 ### 10.1.0
 
 - 2024-11-18:
