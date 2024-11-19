@@ -14,9 +14,9 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>10.1.0</Version>
-		<FileVersion>10.1.0</FileVersion>
-		<AssemblyVersion>10.1.0</AssemblyVersion>
+		<Version>10.1.1</Version>
+		<FileVersion>10.1.1</FileVersion>
+		<AssemblyVersion>10.1.1</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -41,7 +41,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Cadmus.Api.Controllers\Cadmus.Api.Controllers.csproj" />
 		<ProjectReference Include="..\Cadmus.Api.Services\Cadmus.Api.Services.csproj" />
 	</ItemGroup>
 
