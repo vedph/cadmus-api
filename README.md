@@ -25,6 +25,8 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2024-11-22: updated packages for `CadmusApi`.
+
 ### 10.1.3
 
 - 2024-11-20: updated packages.
