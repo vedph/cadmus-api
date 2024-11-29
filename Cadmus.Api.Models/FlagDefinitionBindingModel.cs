@@ -18,6 +18,8 @@ public class FlagDefinitionBindingModel
     [RegularExpression("^[0-9A-Fa-f]{6}$")]
     public string? ColorKey { get; set; }
 
+    public bool IsAdmin { get; set; }
+
     public FlagDefinition ToFlagDefinition()
     {
         return new FlagDefinition
@@ -25,7 +27,8 @@ public class FlagDefinitionBindingModel
             Id = Id,
             Label = Label,
             Description = Description,
-            ColorKey = ColorKey
+            ColorKey = ColorKey,
+            IsAdmin = IsAdmin
         };
     }
 }
