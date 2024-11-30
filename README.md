@@ -25,6 +25,10 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 10.1.5
+
+- 2024-11-30: updated packages.
+
 ### 10.1.4
 
 - 2024-11-29: updated packages to deal with added `isAdmin` in flag definitions.

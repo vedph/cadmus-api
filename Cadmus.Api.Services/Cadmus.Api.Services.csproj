@@ -13,9 +13,9 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>10.1.4</Version>
-		<FileVersion>10.1.4</FileVersion>
-		<AssemblyVersion>10.1.4</AssemblyVersion>
+		<Version>10.1.5</Version>
+		<FileVersion>10.1.5</FileVersion>
+		<AssemblyVersion>10.1.5</AssemblyVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -38,7 +38,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Cadmus.Core" Version="8.0.2" />
-		<PackageReference Include="Cadmus.Export" Version="5.0.0" />
+		<PackageReference Include="Cadmus.Export" Version="5.0.2" />
 		<PackageReference Include="Cadmus.Graph" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="8.0.2" />

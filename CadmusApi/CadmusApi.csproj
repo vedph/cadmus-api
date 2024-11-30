@@ -4,9 +4,9 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>10.1.4</Version>
-		<FileVersion>10.1.4</FileVersion>
-		<AssemblyVersion>10.1.4</AssemblyVersion>
+		<Version>10.1.5</Version>
+		<FileVersion>10.1.5</FileVersion>
+		<AssemblyVersion>10.1.5</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -17,9 +17,9 @@
 		<PackageReference Include="Cadmus.Core" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Mongo" Version="8.0.3" />
 		<PackageReference Include="Cadmus.Seed" Version="8.0.2" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.0" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.1" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="4.0.0" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.0" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.1" />
 		<PackageReference Include="Fusi.Antiquity" Version="5.0.0" />
 		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.0" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
