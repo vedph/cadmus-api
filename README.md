@@ -25,6 +25,10 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 10.1.6
+
+- 2024-12-02: added more claims to `AuthController` after updating packages, so that the JWT token also contains first and last name for the user.
+
 ### 10.1.5
 
 - 2024-11-30: updated packages.
