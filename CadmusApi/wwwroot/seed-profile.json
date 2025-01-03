@@ -1410,6 +1410,40 @@
       ]
     },
     {
+      "id": "metadata-types@en",
+      "entries": [
+        {
+          "id": "boolean",
+          "value": "boolean"
+        },
+        {
+          "id": "number",
+          "value": "number"
+        },
+        {
+          "id": "string",
+          "value": "string"
+        }
+      ]
+    },
+    {
+      "id": "metadata-names@en",
+      "entries": [
+        {
+          "id": "eid",
+          "value": "EID"
+        },
+        {
+          "id": "author",
+          "value": "author"
+        },
+        {
+          "id": "revisor",
+          "value": "revisor"
+        }
+      ]
+    },
+    {
       "id": "orthography-tags@en",
       "entries": [
         {
