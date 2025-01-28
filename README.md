@@ -4,11 +4,17 @@
 
 👉 This is version 10+ of the Cadmus API. The [previous version](https://github.com/vedph/cadmus_api) is meant to be used for legacy projects before the upgrade to .NET 9. This upgrade implies many infrastructural changes which are better implemented in a separate repository. New Cadmus projects will use this version.
 
-🐋 Quick **Docker** image build: `docker build . -t vedph2020/cadmus-api:10.1.0 -t vedph2020/cadmus-api:latest` (replace with the current version).
+🐋 Quick Docker image build (you need to have a `buildx` container):
 
-API layer for the Cadmus content editor.
+```bash
+docker buildx create --use
 
-This API is the default API serving general and philological parts, and contains all the shared components which can be used to compose your own API:
+docker buildx build . --platform linux/amd64,linux/arm64 -t vedph2020/cadmus-api:10.1.0 -t vedph2020/cadmus-api:latest --push
+```
+
+(replace with the current version).
+
+API layer for the Cadmus content editor. This API is the default API serving general and philological parts, and contains all the shared components which can be used to compose your own API:
 
 - `Cadmus.Api.Models`: API data models.
 - `Cadmus.Api.Services`: API services.
@@ -25,6 +31,9 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 10.1.7
+
+- 2025-01-28: updated packages.
 - 2025-01-25: updated packages.
 - 2025-01-01: updated packages.
 - 2024-12-23: updated packages.
