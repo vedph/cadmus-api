@@ -1842,5 +1842,12 @@
         }
       }
     ]
+  },
+  "settings": {
+    "mock": {
+      "name": "mock",
+      "year": 2025,
+      "enabled": true
+    }
   }
 }

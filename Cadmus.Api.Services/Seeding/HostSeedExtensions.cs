@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -38,7 +39,10 @@ public static class HostSeedExtensions
             Thread.Sleep(delay * 1000);
             Console.WriteLine($"Waited for {delay} seconds: resuming...");
         }
-        else Console.WriteLine("No delay to wait.");
+        else
+        {
+            Console.WriteLine("No delay to wait.");
+        }
     }
 
     private static async Task SeedItemsAsync(
@@ -129,6 +133,37 @@ public static class HostSeedExtensions
         Console.WriteLine("Seeding completed.");
     }
 
+    private static void SeedSettings(ICadmusRepository repository,
+        string profileContent)
+    {
+        Console.WriteLine("Seeding settings...");
+        JsonDocument doc = JsonDocument.Parse(profileContent);
+
+        // settings are in the root/settings property, which is a single object
+        // where each property is an object setting: the property name is the
+        // setting key, and the property value is the setting value.
+        // By convention each setting refers to an editor and its ID is the
+        // editor's type ID optionally followed by its role ID prefixed by an
+        // underscore. For instance, categories editor's settings are under
+        // it.vedph.categories, and the role-specific settings are under
+        // it.vedph.categories_role.
+        JsonElement settingsElem = doc.RootElement.GetProperty("settings");
+
+        int count = 0;
+        foreach (JsonProperty settingProp in settingsElem.EnumerateObject())
+        {
+            Console.WriteLine($"- setting {settingProp.Name}...");
+            string? json = settingProp.Value.GetRawText();
+            if (!string.IsNullOrEmpty(json))
+            {
+                repository.AddSetting(settingProp.Name, json);
+                count++;
+            }
+        }
+
+        Console.WriteLine($"Settings seeded: {count}");
+    }
+
     private static async Task SeedCadmusDatabaseAsync(
         IServiceProvider serviceProvider,
         IConfiguration config,
@@ -147,7 +182,7 @@ public static class HostSeedExtensions
         Console.WriteLine($"Database: {databaseName}");
 
         // nope if database exists
-        IDatabaseManager manager = new MongoDatabaseManager();
+        MongoDatabaseManager manager = new();
         if (manager.DatabaseExists(connString))
         {
             Console.WriteLine($"Database {databaseName} already exists");
@@ -181,10 +216,10 @@ public static class HostSeedExtensions
         string profileContent;
         using (StreamReader reader = new(stream, Encoding.UTF8))
         {
-            profileContent = reader.ReadToEnd();
+            profileContent = await reader.ReadToEndAsync();
         }
 
-        IDataProfileSerializer serializer = new JsonDataProfileSerializer();
+        JsonDataProfileSerializer serializer = new();
         DataProfile profile = serializer.Read(profileContent);
 
         // issue warning on invalid profile
@@ -212,7 +247,7 @@ public static class HostSeedExtensions
             (await loaderService.LoadAsync(profileSource))!,
             Encoding.UTF8))
         {
-            factory = factoryProvider.GetFactory(reader.ReadToEnd());
+            factory = factoryProvider.GetFactory(await reader.ReadToEndAsync());
         }
 
         Console.WriteLine("Creating repository...");
@@ -220,6 +255,9 @@ public static class HostSeedExtensions
         IRepositoryProvider repositoryProvider =
             serviceProvider.GetService<IRepositoryProvider>()!;
         ICadmusRepository repository = repositoryProvider.CreateRepository();
+
+        // seed settings if any
+        SeedSettings(repository, profileContent);
 
         // get seed count
         int count = 0;
@@ -245,7 +283,7 @@ public static class HostSeedExtensions
                 foreach (string resolved in SourceRangeResolver.Resolve(source))
                 {
                     Console.WriteLine($"Importing from {resolved}...");
-                    using Stream jsonStream =
+                    await using Stream jsonStream =
                         (await loaderService.LoadAsync(resolved))!;
                     importer.Import(jsonStream);
                 }
