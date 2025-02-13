@@ -31,6 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 10.1.9
+
+- 2025-02-13:
+  - avoid error when the `settings` section does not exist in profile.
+  - updated packages.
+
 ### 10.1.8
 
 - 2025-02-08: updated packages and added editor settings:

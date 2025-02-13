@@ -139,6 +139,14 @@ public static class HostSeedExtensions
         Console.WriteLine("Seeding settings...");
         JsonDocument doc = JsonDocument.Parse(profileContent);
 
+        // check if the settings key exists
+        if (!doc.RootElement.TryGetProperty("settings",
+            out JsonElement settingsElem))
+        {
+            Console.WriteLine("No settings found in the profile.");
+            return;
+        }
+
         // settings are in the root/settings property, which is a single object
         // where each property is an object setting: the property name is the
         // setting key, and the property value is the setting value.
@@ -147,8 +155,6 @@ public static class HostSeedExtensions
         // underscore. For instance, categories editor's settings are under
         // it.vedph.categories, and the role-specific settings are under
         // it.vedph.categories_role.
-        JsonElement settingsElem = doc.RootElement.GetProperty("settings");
-
         int count = 0;
         foreach (JsonProperty settingProp in settingsElem.EnumerateObject())
         {
