@@ -4,24 +4,24 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>10.1.9</Version>
-		<FileVersion>10.1.9</FileVersion>
-		<AssemblyVersion>10.1.9</AssemblyVersion>
+		<Version>10.1.10</Version>
+		<FileVersion>10.1.10</FileVersion>
+		<AssemblyVersion>10.1.10</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Graph.Extras" Version="8.0.5" />
+		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="8.0.6" />
 		<PackageReference Include="Cadmus.Img.Parts" Version="4.0.2" />
-		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Core" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Mongo" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Seed" Version="8.0.5" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.2" />
+		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Core" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Mongo" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Seed" Version="8.0.6" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.3" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="4.0.2" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.2" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.3" />
 		<PackageReference Include="Fusi.Antiquity" Version="5.0.0" />
-		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.1" />
+		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.2" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
 		<PackageReference Include="MessagingApi" Version="5.0.0" />
 		<PackageReference Include="MessagingApi.SendGrid" Version="5.0.1" />
