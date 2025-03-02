@@ -332,12 +332,12 @@ public sealed class ItemController : ControllerBase
         ICadmusRepository repository =
             _repositoryProvider.CreateRepository();
 
-        IHasText? partWithText = repository.GetItemParts(
-            [id], null, PartBase.BASE_TEXT_ROLE_ID).FirstOrDefault() as IHasText;
+        IPart? partWithText = repository.GetItemParts(
+            [id], null, PartBase.BASE_TEXT_ROLE_ID).FirstOrDefault();
         return Ok(new
         {
             Part = partWithText,
-            Text = partWithText?.GetText()
+            Text = (partWithText as IHasText)?.GetText()
         });
     }
 

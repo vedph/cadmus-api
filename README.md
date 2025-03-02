@@ -31,6 +31,17 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 11.0.0
+
+- 2025-03-02:
+  - upgraded Cadmus migration packages to V2. This implied:
+    - changing the API endpoint corresponding to `PreviewController.GetTextSpans`.
+    - adapting to minor names changes in the migration packages.
+  - fixed a minor issue in `ItemController`.
+  - updated packages.
+
+While this is a breaking change for exporters, it does not affect the API and its consumers except for the changed API endpoint and its models.
+
 ### 10.1.10
 
 - 2025-02-14: updated packages.

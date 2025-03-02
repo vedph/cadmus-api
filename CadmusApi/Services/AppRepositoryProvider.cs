@@ -22,7 +22,7 @@ public sealed class AppRepositoryProvider : IRepositoryProvider
     /// <summary>
     /// Gets or sets the connection string.
     /// </summary>
-    public string ConnectionString { get; set; }
+    public string ConnectionString { get; set; } = "";
 
     /// <summary>
     /// Initializes a new instance of the <see cref="AppRepositoryProvider"/> class.

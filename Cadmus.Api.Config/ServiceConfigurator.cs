@@ -2,7 +2,6 @@
 using Cadmus.Api.Services.Messaging;
 using Cadmus.Core.Storage;
 using Cadmus.Core;
-using Cadmus.Export.Preview;
 using Cadmus.Graph.Ef.PgSql;
 using Cadmus.Graph.Ef;
 using Cadmus.Graph;
@@ -41,6 +40,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Cadmus.Graph.Extras;
+using Cadmus.Export;
+using Cadmus.Export.Config;
 
 namespace Cadmus.Api.Config;
 
@@ -332,7 +333,7 @@ public static class ServiceConfigurator
         // get dependencies
         ICadmusRepository repository =
                 provider.GetService<IRepositoryProvider>()!.CreateRepository();
-        StandardCadmusPreviewFactoryProvider factoryProvider = new();
+        StandardCadmusRenderingFactoryProvider factoryProvider = new();
 
         // nope if disabled
         if (!config.GetSection("Preview").GetSection("IsEnabled").Get<bool>())
@@ -362,7 +363,7 @@ public static class ServiceConfigurator
         {
             profile = reader.ReadToEnd();
         }
-        CadmusPreviewFactory factory = factoryProvider.GetFactory(profile);
+        CadmusRenderingFactory factory = factoryProvider.GetFactory(profile);
 
         return new CadmusPreviewer(factory, repository);
     }

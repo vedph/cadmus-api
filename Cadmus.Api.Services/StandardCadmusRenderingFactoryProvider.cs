@@ -1,4 +1,4 @@
-﻿using Cadmus.Export.Preview;
+﻿using Cadmus.Export.Config;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -9,16 +9,14 @@ namespace Cadmus.Api.Services;
 /// <summary>
 /// Standard Cadmus preview factory provider.
 /// </summary>
-public sealed class StandardCadmusPreviewFactoryProvider :
-    ICadmusPreviewFactoryProvider
+public sealed class StandardCadmusRenderingFactoryProvider :
+    ICadmusRenderingFactoryProvider
 {
     private static IHost GetHost(string config, Assembly[] assemblies)
     {
         return new HostBuilder()
             .ConfigureServices((hostContext, services) =>
-            {
-                CadmusPreviewFactory.ConfigureServices(services, assemblies);
-            })
+                CadmusRenderingFactory.ConfigureServices(services, assemblies))
             // extension method from Fusi library
             .AddInMemoryJson(config)
             .Build();
@@ -32,11 +30,11 @@ public sealed class StandardCadmusPreviewFactoryProvider :
     /// </param>
     /// <returns>Factory.</returns>
     /// <exception cref="ArgumentNullException">profile</exception>
-    public CadmusPreviewFactory GetFactory(string profile,
+    public CadmusRenderingFactory GetFactory(string profile,
         params Assembly[] additionalAssemblies)
     {
         ArgumentNullException.ThrowIfNull(profile);
 
-        return new CadmusPreviewFactory(GetHost(profile, additionalAssemblies));
+        return new CadmusRenderingFactory(GetHost(profile, additionalAssemblies));
     }
 }
