@@ -9,7 +9,7 @@
 ```bash
 docker buildx create --use
 
-docker buildx build . --platform linux/amd64,linux/arm64 -t vedph2020/cadmus-api:10.1.0 -t vedph2020/cadmus-api:latest --push
+docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64,windows/arm64 -t vedph2020/cadmus-api:10.1.0 -t vedph2020/cadmus-api:latest --push
 ```
 
 (replace with the current version).
@@ -30,6 +30,10 @@ The API application proper just adds a couple of application-specific services i
 Both these services depend on the parts you choose to support, so they are implemented at the application level.
 
 ## History
+
+### 11.0.1
+
+- 2025-03-09: updated packages (with fix to query builder).
 
 ### 11.0.0
 
