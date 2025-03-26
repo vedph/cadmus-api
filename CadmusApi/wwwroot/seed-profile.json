@@ -461,6 +461,10 @@
           "value": "categories"
         },
         {
+          "id": "it.vedph.categories:eras",
+          "value": "eras"
+        },
+        {
           "id": "it.vedph.decorated-counts",
           "value": "counts"
         },
@@ -531,6 +535,58 @@
         {
           "id": "it.vedph.token-text-layer",
           "value": "text layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.comment",
+          "value": "comment layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.chronology",
+          "value": "chronology layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.apparatus",
+          "value": "apparatus layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.orthography",
+          "value": "orthography layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.pin-links",
+          "value": "links layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.quotations",
+          "value": "quotations layer"
+        },
+        {
+          "id": "it.vedph.token-text-layer:fr.it.vedph.witnesses",
+          "value": "witnesses layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.comment",
+          "value": "comment layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.chronology",
+          "value": "chronology layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.apparatus",
+          "value": "apparatus layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.orthography",
+          "value": "orthography layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.quotations",
+          "value": "quotations layer"
+        },
+        {
+          "id": "it.vedph.tiled-text-layer:fr.it.vedph.witnesses",
+          "value": "witnesses layer"
         },
         {
           "id": "it.vedph.tiled-text-layer",

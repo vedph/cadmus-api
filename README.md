@@ -31,6 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 11.0.2
+
+- 2025-03-26:
+  - added more entries to the `model-types` thesaurus for improved part badge.
+  - updated packages.
+
 ### 11.0.1
 
 - 2025-03-09: updated packages (with fix to query builder).
