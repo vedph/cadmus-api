@@ -31,6 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 11.0.3
+
+- 2025-04-18:
+  - updated packages.
+  - added config for new `AssertedHistoricalDatesPart`.
+
 ### 11.0.2
 
 - 2025-03-26:

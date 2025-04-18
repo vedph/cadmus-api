@@ -44,6 +44,15 @@
           "sortKey": "date"
         },
         {
+          "typeId": "it.vedph.asserted-historical-dates",
+          "name": "date",
+          "description": "Historical dates.",
+          "isRequired": false,
+          "colorKey": "F898F8",
+          "groupKey": "general",
+          "sortKey": "dates"
+        },
+        {
           "typeId": "it.vedph.chronotopes",
           "name": "chronotopes",
           "description": "Date/time indications.",
@@ -452,6 +461,10 @@
     {
       "id": "model-types@en",
       "entries": [
+        {
+          "id": "it.vedph.asserted-historical-dates",
+          "value": "dates"
+        },
         {
           "id": "it.vedph.metadata",
           "value": "metadata"
@@ -1708,6 +1721,9 @@
       "fragmentRoles": []
     },
     "partSeeders": [
+      {
+        "id": "seed.it.vedph.asserted-historical-dates"
+      },
       {
         "id": "seed.it.vedph.metadata"
       },
