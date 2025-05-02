@@ -31,6 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 12.0.0
+
+- 2025-05-02:
+  - updated packages, including [Cadmus migration V3](https://github.com/vedph/cadmus-migration-v3/tree/master).
+  - updated `preview-profile.json` accordingly.
+
 ### 11.0.3
 
 - 2025-04-18:

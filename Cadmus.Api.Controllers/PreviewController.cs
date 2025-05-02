@@ -3,6 +3,7 @@ using Cadmus.Export;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Proteus.Rendering;
 using System.Collections.Generic;
 
 namespace Cadmus.Api.Controllers;
@@ -41,7 +42,7 @@ public sealed class PreviewController : ControllerBase
     [ProducesResponseType(200)]
     public HashSet<string> GetKeys([FromQuery] char type)
     {
-        if (!IsPreviewEnabled()) return new HashSet<string>();
+        if (!IsPreviewEnabled()) return [];
         return char.ToUpperInvariant(type) switch
         {
             'F' => _previewer.GetFlattenerKeys(),
@@ -87,19 +88,19 @@ public sealed class PreviewController : ControllerBase
     }
 
     /// <summary>
-    /// Gets the text spans built by flattening the text part with the
+    /// Gets the text segments built by flattening the text part with the
     /// specified ID with all the layers specified.
     /// </summary>
     /// <param name="textPartId">The base text part's identifier.</param>
     /// <param name="layerPartId">The layer parts identifiers.</param>
-    /// <returns>List of spans.</returns>
+    /// <returns>List of segments.</returns>
     [HttpGet("text-parts/{textPartId}")]
     [ProducesResponseType(200)]
-    public IList<TextSpan> GetTextSpans([FromRoute] string textPartId,
+    public IList<ExportedSegment> GetTextSegments([FromRoute] string textPartId,
         [FromQuery] string[] layerPartId)
     {
         if (!IsPreviewEnabled()) return [];
 
-        return _previewer.BuildTextSpans(textPartId, layerPartId);
+        return _previewer.BuildTextSegments(textPartId, layerPartId);
     }
 }
