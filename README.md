@@ -31,6 +31,9 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 12.0.1
+
+- 2025-06-05: updated packages.
 - 2025-05-30: fix to languages thesaurus.
 
 ### 12.0.0
