@@ -31,6 +31,8 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2025-06-16: use `AddPreferredSecuritySchemes` in program.
+
 ### 12.0.1
 
 - 2025-06-05: updated packages.
