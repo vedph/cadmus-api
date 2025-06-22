@@ -39,7 +39,7 @@ public static class Program
     {
         // Cadmus repository
         string dataCS = string.Format(
-        config.GetConnectionString("Default")!,
+            config.GetConnectionString("Default")!,
             config.GetValue<string>("DatabaseNames:Data"));
         services.AddSingleton<IRepositoryProvider>(
             _ => new AppRepositoryProvider { ConnectionString = dataCS });

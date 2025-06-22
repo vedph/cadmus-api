@@ -4,6 +4,8 @@ del .\Cadmus.Api.Config\bin\Debug\*.nupkg
 del .\Cadmus.Api.Config\bin\Debug\*.snupkg
 del .\Cadmus.Api.Controllers\bin\Debug\*.nupkg
 del .\Cadmus.Api.Controllers\bin\Debug\*.snupkg
+del .\Cadmus.Api.Controllers.Export\bin\Debug\*.nupkg
+del .\Cadmus.Api.Controllers.Export\bin\Debug\*.snupkg
 del .\Cadmus.Api.Controllers.Import\bin\Debug\*.nupkg
 del .\Cadmus.Api.Controllers.Import\bin\Debug\*.snupkg
 del .\Cadmus.Api.Models\bin\Debug\*.nupkg
@@ -20,6 +22,10 @@ dotnet pack -c Debug -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 cd..
 
 cd .\Cadmus.Api.Controllers
+dotnet pack -c Debug -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+cd..
+
+cd .\Cadmus.Api.Controllers.Export
 dotnet pack -c Debug -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
 cd..
 

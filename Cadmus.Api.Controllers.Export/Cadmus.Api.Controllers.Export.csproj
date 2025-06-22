@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<Authors>Daniele Fusi</Authors>
+		<Company>Fusi</Company>
+		<Product>Cadmus</Product>
+		<Description>Cadmus API controllers for data export.</Description>
+		<Copyright>By Daniele Fusi</Copyright>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageTags>Cadmus;API</PackageTags>
+		<Version>0.0.1</Version>
+		<FileVersion>0.0.1</FileVersion>
+		<AssemblyVersion>0.0.1</AssemblyVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Cadmus.Export" Version="8.0.3" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
+	</ItemGroup>
+
+</Project>

@@ -31,6 +31,9 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2025-06-22:
+  - updated packages (affecting all libraries except `Cadmus.Api.Models`).
+  - added `Cadmus.Api.Controllers.Export`. This uses Cadmus migration export components to provide interactive statistics about items editing.
 - 2025-06-16: use `AddPreferredSecuritySchemes` in program.
 
 ### 12.0.1
