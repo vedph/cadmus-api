@@ -31,6 +31,11 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 13.0.0
+
+- 2025-07-14:
+  - added local controller `WalkerDemoGraphController` to the API app to provide mock data for the graph walker. This is targeted to this app in its role as a development shell and will not be included in real-world Cadmus APIs. All the controllers which will be used there are rather found in libraries. This controller being just a local resource, it also has its own lazy seeder for its mock data database.
+  - updated packages.
 - 2025-06-22:
   - updated packages (affecting all libraries except `Cadmus.Api.Models`).
   - added `Cadmus.Api.Controllers.Export`. This uses Cadmus migration export components to provide interactive statistics about items editing.

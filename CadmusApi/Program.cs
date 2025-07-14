@@ -57,6 +57,12 @@ public static class Program
         ServiceConfigurator.ConfigureIndexServices(services, config);
         ServiceConfigurator.ConfigureGraphServices(services, config);
 
+        // walker demo graph repository, only for demo in this app
+        services.AddSingleton((_) =>
+        {
+            return new WalkerDemoGraphRepository(config);
+        });
+
         // previewer
         services.AddSingleton(p => ServiceConfigurator.GetPreviewer(p, config));
     }
@@ -74,7 +80,8 @@ public static class Program
 
         // security
         ServiceConfigurator.ConfigureCorsServices(services, config);
-        ServiceConfigurator.ConfigureRateLimiterService(services, config, hostEnvironment);
+        ServiceConfigurator.ConfigureRateLimiterService(services, config,
+            hostEnvironment);
         ServiceConfigurator.ConfigureAuthServices(services, config);
 
         // proxy
