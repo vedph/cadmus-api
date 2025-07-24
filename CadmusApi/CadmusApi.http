@@ -15,3 +15,6 @@ Content-Type: application/json
 ### GET stats
 GET {{CadmusApi_HostAddress}}/api/stats/edit-frames?start=2025-05-29T00:00:00Z&end=2025-05-31T23:59:59Z
 Accept: application/json
+
+### GET proxy
+GET {{CadmusApi_HostAddress}}/api/proxy?uri=https://viaf.org/viaf/AutoSuggest?query=plato&accept=application/json

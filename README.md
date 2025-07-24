@@ -31,6 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 13.0.2
+
+- 2025-07-24: 
+  - refactored proxy controller. 
+  - updated packages.
+
 ### 13.0.0
 
 - 2025-07-14:
