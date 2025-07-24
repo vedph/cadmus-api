@@ -4,9 +4,9 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>12.0.4</Version>
-		<FileVersion>12.0.4</FileVersion>
-		<AssemblyVersion>12.0.4</AssemblyVersion>
+		<Version>12.0.5</Version>
+		<FileVersion>12.0.5</FileVersion>
+		<AssemblyVersion>12.0.5</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -31,7 +31,7 @@
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="4.0.2" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.3" />
 		<PackageReference Include="Fusi.Antiquity" Version="5.0.1" />
-		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.2" />
+		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.4" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
 		<PackageReference Include="MessagingApi" Version="5.0.0" />
 		<PackageReference Include="MessagingApi.SendGrid" Version="5.0.1" />
