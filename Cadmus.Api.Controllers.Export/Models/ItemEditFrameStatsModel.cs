@@ -21,11 +21,12 @@ public class ItemEditFrameStatsModel
 
     /// <summary>
     /// The interval of the frame, e.g. "1h" for one hour. Allowed formats
-    /// are a number followed by a letter: <c>m</c>, <c>h</c>, <c>d</c>.
+    /// are a number followed by a letter: <c>m</c>inute, <c>h</c>our,
+    /// <c>d</c>ay, <c>w</c>eek (=7 days), <c>M</c>onth (=30 days).
     /// </summary>
-    [RegularExpression(@"^\d+[mhdMHD]$",
+    [RegularExpression(@"^\d+[mhdwM]$",
         ErrorMessage = "Interval must be a number followed " +
-        "by 'm'inutes, 'h'ours, or 'd'ays")]
+        "by 'm'inutes, 'h'ours, 'd'ays, 'w'eeks, 'M'onth")]
     public string Interval { get; set; } = "1d";
 
     /// <summary>
@@ -42,7 +43,7 @@ public class ItemEditFrameStatsModel
     public IEnumerable<Tuple<DateTime, DateTime>> GetFrames()
     {
         string intervalText = Interval?.Trim() ?? "7d";
-        char type = char.ToLowerInvariant(intervalText[^1]);
+        char type = intervalText[^1];
 
         DateTime start;
         DateTime end;
@@ -77,6 +78,16 @@ public class ItemEditFrameStatsModel
                 interval = TimeSpan.FromDays(int.Parse(intervalText[..^1]));
                 start = Start ?? new DateTime(
                     (end - TimeSpan.FromDays(10)).Date.Ticks, DateTimeKind.Utc);
+                break;
+            case 'w':
+                interval = TimeSpan.FromDays(int.Parse(intervalText[..^1]) * 7);
+                start = Start ?? new DateTime(
+                    (end - TimeSpan.FromDays(70)).Date.Ticks, DateTimeKind.Utc);
+                break;
+            case 'M':
+                interval = TimeSpan.FromDays(int.Parse(intervalText[..^1]) * 30);
+                start = Start ?? new DateTime(
+                    (end - TimeSpan.FromDays(300)).Date.Ticks, DateTimeKind.Utc);
                 break;
             default:
                 throw new ArgumentException("Invalid interval format");
