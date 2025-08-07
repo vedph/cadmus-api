@@ -35,6 +35,15 @@
           "sortKey": "categories_eras"
         },
         {
+          "typeId": "it.vedph.flags",
+          "name": "flags",
+          "description": "Item's flags.",
+          "isRequired": false,
+          "colorKey": "87F0F0",
+          "groupKey": "general",
+          "sortKey": "flags"
+        },
+        {
           "typeId": "it.vedph.historical-date",
           "name": "date",
           "description": "Historical date.",
@@ -488,6 +497,10 @@
         {
           "id": "it.vedph.external-ids",
           "value": "external IDs"
+        },
+        {
+          "id": "it.vedph.flags",
+          "value": "flags"
         },
         {
           "id": "it.vedph.historical-date",
@@ -1479,6 +1492,35 @@
       ]
     },
     {
+      "id": "flags@en",
+      "entries": [
+        {
+          "id": "alpha",
+          "value": "alpha"
+        },
+        {
+          "id": "beta",
+          "value": "beta"
+        },
+        {
+          "id": "gamma",
+          "value": "gamma"
+        },
+        {
+          "id": "delta",
+          "value": "delta"
+        },
+        {
+          "id": "epsilon",
+          "value": "epsilon"
+        },
+        {
+          "id": "zeta",
+          "value": "zeta"
+        }
+      ]
+    },
+    {
       "id": "metadata-types@en",
       "entries": [
         {
@@ -1757,6 +1799,18 @@
         "id": "seed.it.vedph.decorated-counts"
       },
       {
+        "id": "seed.it.vedph.flags",
+        "options": {
+          "flags": [
+            "alpha",
+            "beta",
+            "gamma",
+            "delta",
+            "epsilon"
+          ]
+        }
+      },
+      {
         "id": "seed.it.vedph.pin-links"
       },
       {
@@ -1916,6 +1970,36 @@
     ]
   },
   "settings": {
+    "it.vedph.flags": {
+      "definitions": [
+        {
+          "key": "alpha",
+          "label": "alpha",
+          "markdown": true,
+          "maxLength": 100
+        },
+        {
+          "key": "beta",
+          "label": "beta",
+          "maxLength": 100
+        },
+        {
+          "key": "gamma",
+          "label": "gamma",
+          "maxLength": 100
+        },
+        {
+          "key": "delta",
+          "label": "delta",
+          "maxLength": 100
+        },
+        {
+          "key": "epsilon",
+          "label": "epsilon",
+          "maxLength": 100
+        }
+      ]
+    },
     "mock": {
       "name": "mock",
       "year": 2025,

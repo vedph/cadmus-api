@@ -31,6 +31,7 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2025-08-07: updated packages and added flags part to profile.
 - 2025-08-02:
   - added `w`eek and `M`onth to stats controller time interval units.
   - updated packages.
