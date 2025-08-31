@@ -14,9 +14,9 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>10.1.20</Version>
-		<FileVersion>10.1.20</FileVersion>
-		<AssemblyVersion>10.1.20</AssemblyVersion>
+		<Version>10.1.21</Version>
+		<FileVersion>10.1.21</FileVersion>
+		<AssemblyVersion>10.1.21</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -28,8 +28,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.8" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
-		<PackageReference Include="Polly" Version="8.6.2" />
-		<PackageReference Include="Scalar.AspNetCore" Version="2.6.8" />
+		<PackageReference Include="Polly" Version="8.6.3" />
+		<PackageReference Include="Scalar.AspNetCore" Version="2.7.2" />
 		<PackageReference Include="Serilog" Version="4.3.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
