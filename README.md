@@ -31,6 +31,7 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2025-09-15: updated packages.
 - 2025-08-31: updated packages and version numbers of affected libraries.
 
 ### 13.0.3

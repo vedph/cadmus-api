@@ -27,21 +27,21 @@
 		<PackageReference Include="Cadmus.Core" Version="8.0.9" />
 		<PackageReference Include="Cadmus.Mongo" Version="8.0.9" />
 		<PackageReference Include="Cadmus.Seed" Version="8.0.9" />
-		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.5" />
+		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.6" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="4.0.2" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="9.0.3" />
 		<PackageReference Include="Fusi.Antiquity" Version="5.0.1" />
-		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.4" />
+		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.5" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
 		<PackageReference Include="MessagingApi" Version="5.0.0" />
 		<PackageReference Include="MessagingApi.SendGrid" Version="5.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.8" />
-		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.8" />
-		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.8" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.8" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.9" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.9" />
 		<PackageReference Include="Polly" Version="8.6.3" />
-		<PackageReference Include="Scalar.AspNetCore" Version="2.7.2" />
+		<PackageReference Include="Scalar.AspNetCore" Version="2.8.3" />
 		<PackageReference Include="Serilog" Version="4.3.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
