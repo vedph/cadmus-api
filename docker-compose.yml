@@ -31,7 +31,7 @@ services:
 
   ## Cadmus API
   cadmus-api:
-    image: vedph2020/cadmus-api:13.0.3
+    image: vedph2020/cadmus-api:13.0.4
     container_name: cadmus-api
     ports:
       # https://stackoverflow.com/questions/48669548/why-does-aspnet-core-start-on-port-80-from-within-docker

@@ -14,13 +14,13 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>10.1.21</Version>
-		<FileVersion>10.1.21</FileVersion>
-		<AssemblyVersion>10.1.21</AssemblyVersion>
+		<Version>10.1.22</Version>
+		<FileVersion>10.1.22</FileVersion>
+		<AssemblyVersion>10.1.22</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Extras" Version="8.0.9" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="8.0.10" />
 		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.5" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
 		<PackageReference Include="MessagingApi" Version="5.0.0" />

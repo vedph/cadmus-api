@@ -9,7 +9,7 @@
 ```bash
 docker buildx create --use
 
-docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64,windows/arm64 -t vedph2020/cadmus-api:13.0.3 -t vedph2020/cadmus-codicology-api:latest --push
+docker buildx build . --platform linux/amd64,linux/arm64,windows/amd64,windows/arm64 -t vedph2020/cadmus-api:13.0.4 -t vedph2020/cadmus-codicology-api:latest --push
 ```
 
 (replace with the current version).
@@ -30,6 +30,8 @@ The API application proper just adds a couple of application-specific services i
 Both these services depend on the parts you choose to support, so they are implemented at the application level.
 
 ## History
+
+### 13.0.4
 
 - 2025-09-15: updated packages.
 - 2025-08-31: updated packages and version numbers of affected libraries.
