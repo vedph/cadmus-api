@@ -64,7 +64,7 @@
         {
           "typeId": "it.vedph.chronotopes",
           "name": "chronotopes",
-          "description": "Date/time indications.",
+          "description": "Date/place indications.",
           "isRequired": false,
           "colorKey": "F887C8",
           "groupKey": "general",
