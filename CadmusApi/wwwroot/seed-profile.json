@@ -1555,6 +1555,23 @@
       ]
     },
     {
+      "id": "orthography-languages@en",
+      "entries": [
+        {
+          "id": "grc",
+          "value": "Ancient Greek"
+        },
+        {
+          "id": "la",
+          "value": "Latin"
+        }
+      ]
+    },
+    {
+      "id": "orthography-op-tags@en",
+      "targetId": "orthography-tags"
+    },
+    {
       "id": "orthography-tags@en",
       "entries": [
         {
