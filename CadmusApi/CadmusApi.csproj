@@ -4,9 +4,9 @@
 		<TargetFramework>net9.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>12.0.9</Version>
-		<FileVersion>12.0.9</FileVersion>
-		<AssemblyVersion>12.0.9</AssemblyVersion>
+		<Version>12.0.10</Version>
+		<FileVersion>12.0.10</FileVersion>
+		<AssemblyVersion>12.0.10</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,7 +29,7 @@
 		<PackageReference Include="Cadmus.Seed" Version="8.0.11" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="7.0.7" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="4.0.2" />
-		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="11.0.0" />
+		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="11.0.1" />
 		<PackageReference Include="Fusi.Antiquity" Version="5.1.1" />
 		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="6.0.6" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="4.0.0" />
@@ -46,7 +46,7 @@
 		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
 		<PackageReference Include="Serilog.Sinks.MongoDB" Version="7.2.0" />
 		<PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.2.0" />

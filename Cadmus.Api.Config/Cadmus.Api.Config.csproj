@@ -14,9 +14,9 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>10.1.24</Version>
-		<FileVersion>10.1.24</FileVersion>
-		<AssemblyVersion>10.1.24</AssemblyVersion>
+		<Version>10.1.25</Version>
+		<FileVersion>10.1.25</FileVersion>
+		<AssemblyVersion>10.1.25</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -34,7 +34,7 @@
 		<PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="9.0.0" />
-		<PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
 		<PackageReference Include="Serilog.Sinks.MongoDB" Version="7.2.0" />
 		<PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.2.0" />
