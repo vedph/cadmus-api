@@ -1569,21 +1569,29 @@
     },
     {
       "id": "orthography-op-tags@en",
-      "targetId": "orthography-tags"
-    },
-    {
-      "id": "orthography-tags@en",
       "entries": [
         {
           "id": "v",
           "value": "vocoids"
         },
         {
-          "id": "v.iotacism",
-          "value": "vocoids: iotacism"
+          "id": "v.length",
+          "value": "vocoids: length"
         },
         {
-          "id": "v.monop",
+          "id": "v.length.shorten",
+          "value": "vocoids: length: shortening"
+        },
+        {
+          "id": "v.length.lengthen",
+          "value": "vocoids: length: lengthening"
+        },
+        {
+          "id": "v.diphth",
+          "value": "vocoids: diphthongization"
+        },
+        {
+          "id": "v.monophth",
           "value": "vocoids: monophthongization"
         },
         {
@@ -1595,16 +1603,65 @@
           "value": "contoids: plosives"
         },
         {
+          "id": "c.pls.-",
+          "value": "contoids: plosives"
+        },
+        {
+          "id": "c.pls.spir",
+          "value": "contoids: plosives: spirantization"
+        },
+        {
           "id": "c.liq",
           "value": "contoids: liquids"
         },
         {
-          "id": "c.liq",
+          "id": "c.liq.-",
+          "value": "contoids: liquids"
+        },
+        {
+          "id": "c.liq.mobility",
+          "value": "contoids: liquids: mobility"
+        },
+        {
+          "id": "c.nas",
           "value": "contoids: nasals"
         },
         {
-          "id": "c.fri",
+          "id": "c.frc",
           "value": "contoids: fricatives"
+        },
+        {
+          "id": "c.apx",
+          "value": "contoids: approximants"
+        },
+        {
+          "id": "c.length",
+          "value": "contoids: length"
+        },
+        {
+          "id": "c.length.shorten",
+          "value": "contoids: length: degemination"
+        },
+        {
+          "id": "c.length.lengthen",
+          "value": "contoids: length: gemination"
+        }
+      ]
+    },
+    {
+      "id": "orthography-tags@en",
+      "entries": [
+        {
+          "id": "archaic",
+          "value": "archaic"
+        },
+        {
+          "id": "vulgar",
+          "value": "vulgar"
+        },
+        {
+          "id": "epichoric",
+          "value": "epichoric"
         }
       ]
     },
