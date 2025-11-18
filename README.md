@@ -31,6 +31,7 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2025-11-18: updated `Cadmus.Export` package after fix.
 - 2025-11-02: updated packages.
 - 2025-10-28: updated packages.
 - 2025-10-08: updated packages.
