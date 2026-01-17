@@ -31,6 +31,7 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2026-01-17: updated packages.
 - 2025-11-23: ⚠️ upgraded to NET 10.
 - 2025-11-18: updated `Cadmus.Export` package after fix.
 - 2025-11-02: updated packages.
