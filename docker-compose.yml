@@ -46,12 +46,14 @@ services:
       - CONNECTIONSTRINGS__DEFAULT=mongodb://cadmus-mongo:27017/{0}
       - CONNECTIONSTRINGS__AUTH=Server=cadmus-pgsql;port=5432;Database={0};User Id=postgres;Password=postgres;Include Error Detail=True
       - CONNECTIONSTRINGS__INDEX=Server=cadmus-pgsql;port=5432;Database={0};User Id=postgres;Password=postgres;Include Error Detail=True
+      - CONNECTIONSTRINGS__TAXOSTORE=Server=cadmus-pgsql;port=5432;Database=cadmus-taxo;User Id=postgres;Password=postgres;Include Error Detail=True
       - SEED__DELAY=25
       - MESSAGING__APIROOTURL=http://cadmusapi.azurewebsites.net
       - MESSAGING__APPROOTURL=http://cadmusapi.com/
       - MESSAGING__SUPPORTEMAIL=support@cadmus.com
       - SERILOG__CONNECTIONSTRING=mongodb://cadmus-mongo:27017/cadmus-logs
       - STOCKUSERS__0__PASSWORD=P4ss-W0rd!
+      - TAXOSTORE__INITIALIZATIONDELAYSECONDS=30
     networks:
       - cadmus-network
 

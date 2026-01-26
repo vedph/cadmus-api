@@ -44,6 +44,14 @@
           "sortKey": "flags"
         },
         {
+          "typeId": "it.vedph.taxo-store-nodes",
+          "name": "taxonomies",
+          "description": "Taxonomies.",
+          "colorKey": "98F8F8",
+          "groupKey": "general",
+          "sortKey": "taxonomies"
+        },
+        {
           "typeId": "it.vedph.historical-date",
           "name": "date",
           "description": "Historical date.",
@@ -549,6 +557,10 @@
         {
           "id": "it.vedph.ext-bibliography",
           "value": "ext-bibliography"
+        },
+        {
+          "id": "it.vedph.taxo-store-nodes",
+          "value": "taxonomies"
         },
         {
           "id": "it.vedph.tiled-text",
@@ -2074,10 +2086,8 @@
         }
       ]
     },
-    "mock": {
-      "name": "mock",
-      "year": 2025,
-      "enabled": true
+    "it.vedph.taxo-store-nodes": {
+      "treeId": "animals"
     }
   }
 }

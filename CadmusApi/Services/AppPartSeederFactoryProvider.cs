@@ -3,6 +3,7 @@ using Cadmus.Seed;
 using Cadmus.Seed.General.Parts;
 using Cadmus.Seed.Img.Parts;
 using Cadmus.Seed.Philology.Parts;
+using Cadmus.Seed.TaxoStore.Parts;
 using Fusi.Microsoft.Extensions.Configuration.InMemoryJson;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -27,7 +28,9 @@ public sealed class AppPartSeederFactoryProvider : IPartSeederFactoryProvider
             // Cadmus.Seed.Philology.Parts
             typeof(ApparatusLayerFragmentSeeder).Assembly,
             // Cadmus.Seed.Img.Parts
-            typeof(GalleryImageAnnotationsPartSeeder).GetTypeInfo().Assembly
+            typeof(GalleryImageAnnotationsPartSeeder).GetTypeInfo().Assembly,
+            // Cadmus.Seed.TaxoStore.Parts
+            typeof(TaxoStoreNodesPartSeeder).GetTypeInfo().Assembly
         ];
         TagAttributeToTypeMap map = new();
         map.Add(seedAssemblies);

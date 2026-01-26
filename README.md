@@ -31,6 +31,7 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2026-01-26: 🆕 added [taxonomies store](https://github.com/vedph/taxo-store) to the API demo. This is an optional component, but it is used in the demo to show how to manage taxonomies in Cadmus.
 - 2026-01-17: updated packages.
 - 2025-11-23: ⚠️ upgraded to NET 10.
 - 2025-11-18: updated `Cadmus.Export` package after fix.

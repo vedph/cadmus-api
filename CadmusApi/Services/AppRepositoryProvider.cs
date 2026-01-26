@@ -7,6 +7,7 @@ using Cadmus.General.Parts;
 using Cadmus.Img.Parts;
 using Cadmus.Mongo;
 using Cadmus.Philology.Parts;
+using Cadmus.TaxoStore.Parts;
 
 namespace CadmusApi.Services;
 
@@ -38,7 +39,9 @@ public sealed class AppRepositoryProvider : IRepositoryProvider
             // Cadmus.Philology.Parts
             typeof(ApparatusLayerFragment).GetTypeInfo().Assembly,
             // Cadmus.Img.Parts
-            typeof(W3CGalleryImageAnnotationsPart).GetTypeInfo().Assembly
+            typeof(W3CGalleryImageAnnotationsPart).GetTypeInfo().Assembly,
+            // Cadmus.TaxoStore.Parts
+            typeof(TaxoStoreNodesPart).GetTypeInfo().Assembly
         ]);
 
         _partTypeProvider = new StandardPartTypeProvider(_map);
