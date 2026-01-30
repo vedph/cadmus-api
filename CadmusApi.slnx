@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="docker-compose.yml" />
+    <File Path="Dockerfile" />
+    <File Path="Pack.bat" />
+    <File Path="Push.bat" />
+    <File Path="PushLocal.bat" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="Cadmus.Api.Config/Cadmus.Api.Config.csproj" />
+  <Project Path="Cadmus.Api.Controllers.Export/Cadmus.Api.Controllers.Export.csproj" />
+  <Project Path="Cadmus.Api.Controllers.Import/Cadmus.Api.Controllers.Import.csproj" />
+  <Project Path="Cadmus.Api.Controllers/Cadmus.Api.Controllers.csproj" />
+  <Project Path="Cadmus.Api.Models/Cadmus.Api.Models.csproj" />
+  <Project Path="Cadmus.Api.Services/Cadmus.Api.Services.csproj" />
+  <Project Path="CadmusApi/CadmusApi.csproj" />
+</Solution>
