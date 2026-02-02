@@ -4,9 +4,9 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>13.0.5</Version>
-		<FileVersion>13.0.5</FileVersion>
-		<AssemblyVersion>13.0.5</AssemblyVersion>
+		<Version>13.0.6</Version>
+		<FileVersion>13.0.6</FileVersion>
+		<AssemblyVersion>13.0.6</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,13 +20,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.1" />
-		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.1" />
+		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.2" />
 		<PackageReference Include="Cadmus.Img.Parts" Version="5.0.0" />
-		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="10.0.1" />
-		<PackageReference Include="Cadmus.Core" Version="10.0.1" />
-		<PackageReference Include="Cadmus.Mongo" Version="10.0.1" />
-		<PackageReference Include="Cadmus.Seed" Version="10.0.1" />
+		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Core" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Mongo" Version="10.0.2" />
+		<PackageReference Include="Cadmus.Seed" Version="10.1.1" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.1" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="5.0.0" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.1" />
@@ -41,7 +41,7 @@
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.2" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="10.0.2" />
 		<PackageReference Include="Polly" Version="8.6.5" />
-		<PackageReference Include="Scalar.AspNetCore" Version="2.12.18" />
+		<PackageReference Include="Scalar.AspNetCore" Version="2.12.30" />
 		<PackageReference Include="Serilog" Version="4.3.0" />
 		<PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
 		<PackageReference Include="Serilog.Exceptions" Version="8.4.0" />

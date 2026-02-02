@@ -212,6 +212,21 @@ public sealed class ThesaurusController : ControllerBase
     }
 
     /// <summary>
+    /// Gets the IDs of all the thesauri that are direct aliases of the
+    /// thesaurus with the specified ID.
+    /// </summary>
+    /// <param name="id">The target thesaurus ID.</param>
+    /// <returns>List of alias thesaurus IDs in alphabetical order.</returns>
+    [HttpGet("api/thesauri/{id}/aliases")]
+    [ProducesResponseType(200)]
+    public ActionResult<IList<string>> GetThesaurusAliases([FromRoute] string id)
+    {
+        ICadmusRepository repository =
+            _repositoryProvider.CreateRepository();
+        return Ok(repository.GetThesaurusAliases(id));
+    }
+
+    /// <summary>
     /// Deletes the thesaurus with the specified ID.
     /// </summary>
     /// <param name="id">The thesaurus ID.</param>
