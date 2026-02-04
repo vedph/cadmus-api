@@ -2088,6 +2088,22 @@
     },
     "it.vedph.taxo-store-nodes": {
       "treeId": "animals"
+    },
+    "it.vedph.pin-links": {
+      "lookupProviderOptions": {
+        "biblissima": {
+          "q168": {
+            "label": "people",
+            "options": {
+              "type": "Q168"
+            }
+          },
+          "q282950": {
+            "label": "works",
+            "options": { "type": "Q282950" }
+          }
+        }
+      }
     }
   }
 }
