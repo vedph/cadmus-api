@@ -2056,6 +2056,19 @@
     ]
   },
   "settings": {
+    "it.vedph.chronotopes": {
+      "placeLookupServiceId": "biblissima",
+      "lookupProviderOptions": {
+        "biblissima": {
+          "q26719": {
+            "label": "place",
+            "options": {
+              "type": "Q26719"
+            }
+          }
+        }
+      }
+    },
     "it.vedph.flags": {
       "definitions": [
         {
@@ -2086,9 +2099,6 @@
         }
       ]
     },
-    "it.vedph.taxo-store-nodes": {
-      "treeId": "animals"
-    },
     "it.vedph.pin-links": {
       "lookupProviderOptions": {
         "biblissima": {
@@ -2104,6 +2114,9 @@
           }
         }
       }
+    },
+    "it.vedph.taxo-store-nodes": {
+      "treeId": "animals"
     }
   }
 }
