@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -92,7 +91,7 @@ public sealed class SettingsImportController : ControllerBase
                     // to the repository
                     ids.Add(id);
                     JsonElement setting = prop.Value;
-                    if (!dryRun) repository.AddSetting(id, setting.ToJson());
+                    if (!dryRun) repository.AddSetting(id, setting.GetRawText());
                 }
             }
 
