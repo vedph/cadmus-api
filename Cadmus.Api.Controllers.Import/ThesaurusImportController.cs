@@ -52,7 +52,7 @@ public sealed class ThesaurusImportController : ControllerBase
     /// <exception cref="InvalidOperationException">No ID for thesaurus</exception>
     [Authorize(Roles = "admin")]
     [HttpPost("api/thesauri/import")]
-    public ImportThesauriResult UploadThesauri(
+    public ImportResult UploadThesauri(
         // https://github.com/domaindrivendev/Swashbuckle.AspNetCore#handle-forms-and-file-uploads
         IFormFile file,
         [FromQuery] ImportThesauriBindingModel model)
@@ -85,12 +85,12 @@ public sealed class ThesaurusImportController : ControllerBase
                     _ => new JsonThesaurusReader(stream)
                 };
 
-            Thesaurus? source;
             ImportUpdateMode mode = GetMode(model.Mode?[0] ?? 'R');
-            List<string> ids = new();
+            List<string> ids = [];
 
-            while ((source = reader.Next()) != null)
+            while ((reader.Next()))
             {
+                Thesaurus source = reader.Current!;
                 if (string.IsNullOrEmpty(source.Id))
                     throw new InvalidOperationException("No ID for thesaurus");
 
@@ -108,7 +108,7 @@ public sealed class ThesaurusImportController : ControllerBase
                 if (model.DryRun != true) repository.AddThesaurus(result);
             }
 
-            return new ImportThesauriResult
+            return new ImportResult
             {
                 ImportedIds = ids
             };
@@ -117,7 +117,7 @@ public sealed class ThesaurusImportController : ControllerBase
         {
             _logger?.LogError(ex, "Error importing thesauri: {Message}",
                 ex.Message);
-            return new ImportThesauriResult
+            return new ImportResult
             {
                 Error = ex.Message
             };
