@@ -34,12 +34,14 @@ public sealed class SettingsImportController : ControllerBase
     }
 
     /// <summary>
-    /// Uploads one or more facets importing them into the Cadmus database.
+    /// Uploads one or more settings importing them into the Cadmus database.
     /// </summary>
-    /// <param name="file">The file.</param>
-    /// <param name="model">The import model.</param>
+    /// <param name="file">The JSON file. In it, each settings entry is a JSON
+    /// object with as many properties as setting entries to import, each named
+    /// after the setting ID, and having as value the JSON object with the setting
+    /// definition</param>
+    /// <param name="dryRun">True to perform a dry run without saving.</param>
     /// <returns>Result.</returns>
-    /// <exception cref="InvalidOperationException">No ID for thesaurus</exception>
     [Authorize(Roles = "admin")]
     [HttpPost("api/settings/import")]
     public ImportResult UploadSettings(
@@ -58,7 +60,7 @@ public sealed class SettingsImportController : ControllerBase
 
         try
         {
-            Stream stream = file.OpenReadStream();
+            using Stream stream = file.OpenReadStream();
             using JsonSettingsReader reader = new(stream);
 
             List<string> ids = [];
@@ -80,8 +82,9 @@ public sealed class SettingsImportController : ControllerBase
                     // ensure that the property value is a JSON object
                     if (prop.Value.ValueKind != JsonValueKind.Object)
                     {
-                        _logger?.LogError("  - skipped setting ID {Id} because " +
-                            "it is not a JSON object", id);
+                        _logger?.LogWarning(
+                            "Skipped setting ID {Id}: value is not a JSON " +
+                            "object (kind={Kind})", id, prop.Value.ValueKind);
                         continue;
                     }
 
@@ -92,6 +95,9 @@ public sealed class SettingsImportController : ControllerBase
                     if (!dryRun) repository.AddSetting(id, setting.ToJson());
                 }
             }
+
+            _logger?.LogInformation("Import completed: {Count} setting(s)",
+                ids.Count);
 
             return new ImportResult
             {

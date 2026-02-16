@@ -21,7 +21,7 @@ public sealed class SettingsController(IRepositoryProvider repositoryProvider)
     /// </summary>
     /// <returns>JSON code representing the settings, equal to <c>{}</c> if
     /// not found.</returns>
-    [HttpGet("{id}")]
+    [HttpGet("{id:regex(^(?!import$).+$)}")]
     [Produces("application/json")]
     [ProducesResponseType(200)]
     [ProducesResponseType(400)]
@@ -49,7 +49,7 @@ public sealed class SettingsController(IRepositoryProvider repositoryProvider)
     /// </summary>
     /// <param name="id">The setting's identifier.</param>
     /// <param name="value">The JSON code representing the setting.</param>
-    [HttpPost("{id}")]
+    [HttpPost("{id:regex(^(?!import$).+$)}")]
     [ProducesResponseType(200)]
     public ActionResult Add(string id, [FromBody] string value)
     {
@@ -65,7 +65,7 @@ public sealed class SettingsController(IRepositoryProvider repositoryProvider)
     /// Deletes the setting with the specified identifier.
     /// </summary>
     /// <param name="id">The setting's identifier.</param>
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:regex(^(?!import$).+$)}")]
     public void Delete(string id)
     {
         ICadmusRepository repository =

@@ -14,7 +14,7 @@ using System.IO;
 namespace Cadmus.Api.Controllers.Import;
 
 /// <summary>
-/// Thesauri import controller.
+/// Facets import controller.
 /// </summary>
 /// <seealso cref="ControllerBase" />
 [Authorize]
@@ -36,6 +36,7 @@ public sealed class FacetImportController : ControllerBase
     {
         return char.ToUpperInvariant(c) switch
         {
+            // for facets, patch is equivalent to synch
             'P' => ImportUpdateMode.Synch,
             'S' => ImportUpdateMode.Synch,
             _ => ImportUpdateMode.Replace,
@@ -45,10 +46,10 @@ public sealed class FacetImportController : ControllerBase
     /// <summary>
     /// Uploads one or more facets importing them into the Cadmus database.
     /// </summary>
-    /// <param name="file">The file.</param>
+    /// <param name="file">The JSON file.</param>
     /// <param name="model">The import model.</param>
     /// <returns>Result.</returns>
-    /// <exception cref="InvalidOperationException">No ID for thesaurus</exception>
+    /// <exception cref="InvalidOperationException">No ID for facet</exception>
     [Authorize(Roles = "admin")]
     [HttpPost("api/facets/import")]
     public ImportResult UploadFacets(
@@ -67,10 +68,30 @@ public sealed class FacetImportController : ControllerBase
 
         try
         {
-            Stream stream = file.OpenReadStream();
+            using Stream stream = file.OpenReadStream();
             using JsonFacetReader reader = new(stream);
 
             ImportUpdateMode mode = GetMode(model.Mode?[0] ?? 'R');
+            if (model.Mode?[0] is 'P' or 'p')
+            {
+                _logger?.LogInformation(
+                    "Patch mode requested; using Synch (equivalent for facets)");
+            }
+
+            // read all facets first to ensure the file is valid before
+            // making any changes to the repository
+            List<FacetDefinition> newFacets = [];
+            while ((reader.Next()))
+            {
+                FacetDefinition facet = reader.Current!;
+                if (string.IsNullOrEmpty(facet.Id))
+                    throw new InvalidOperationException("No ID for facet");
+                newFacets.Add(facet);
+            }
+
+            _logger?.LogInformation("Read {Count} facet(s) from file",
+                newFacets.Count);
+
             List<string> ids = [];
 
             // in synch mode, the facets imported will replace all the existing
@@ -81,25 +102,27 @@ public sealed class FacetImportController : ControllerBase
             if (mode == ImportUpdateMode.Synch && model.DryRun != true)
             {
                 _logger?.LogInformation("Deleting old facets...");
-                IList<FacetDefinition> facets = repository.GetFacetDefinitions();
-                foreach (FacetDefinition facet in facets)
+                IList<FacetDefinition> oldFacets =
+                    repository.GetFacetDefinitions();
+                foreach (FacetDefinition facet in oldFacets)
                 {
-                    _logger?.LogInformation("  - deleting facet ID: {Id}", facet.Id);
+                    _logger?.LogInformation("  - deleting facet ID: {Id}",
+                        facet.Id);
                     repository.DeleteFacetDefinition(facet.Id);
                 }
-                _logger?.LogInformation("Old facets deleted");
+                _logger?.LogInformation("Old facets deleted ({Count})",
+                    oldFacets.Count);
             }
 
-            while ((reader.Next()))
+            foreach (FacetDefinition facet in newFacets)
             {
-                FacetDefinition facet = reader.Current!;
-                if (string.IsNullOrEmpty(facet.Id))
-                    throw new InvalidOperationException("No ID for facet");
-
                 _logger?.LogInformation("Importing facet ID: {Id}", facet.Id);
                 ids.Add(facet.Id);
                 if (model.DryRun != true) repository.AddFacetDefinition(facet);
             }
+
+            _logger?.LogInformation("Import completed: {Count} facet(s)",
+                ids.Count);
 
             return new ImportResult
             {

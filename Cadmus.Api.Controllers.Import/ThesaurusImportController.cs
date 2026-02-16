@@ -75,13 +75,13 @@ public sealed class ThesaurusImportController : ControllerBase
 
         try
         {
-            Stream stream = file.OpenReadStream();
+            using Stream stream = file.OpenReadStream();
             using IThesaurusReader reader =
                 Path.GetExtension(file.FileName).ToLowerInvariant() switch
                 {
                     ".csv" => new CsvThesaurusReader(stream),
                     ".xls" => new ExcelThesaurusReader(stream, xlsOptions),
-                    ".xlsx" => new ExcelThesaurusReader(stream),
+                    ".xlsx" => new ExcelThesaurusReader(stream, xlsOptions),
                     _ => new JsonThesaurusReader(stream)
                 };
 
@@ -107,6 +107,9 @@ public sealed class ThesaurusImportController : ControllerBase
                 // save
                 if (model.DryRun != true) repository.AddThesaurus(result);
             }
+
+            _logger?.LogInformation(
+                "Import completed: {Count} thesaurus/i", ids.Count);
 
             return new ImportResult
             {

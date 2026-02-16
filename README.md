@@ -31,6 +31,9 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+- 2026-02-16:
+  - updated packages.
+  - added new import endpoints for facets and settings.
 - 2026-02-08:
   - updated packages.
   - added settings for chronotopes.
