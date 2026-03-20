@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cadmus.Api.Models;
 using Cadmus.Core;
 using Cadmus.Core.Config;
 using Cadmus.Core.Storage;
@@ -36,7 +37,7 @@ public sealed class FacetController : ControllerBase
     [HttpGet("api/facets")]
     [Produces("application/json")]
     [ProducesResponseType(200)]
-    public ActionResult<FacetDefinition[]> Get()
+    public ActionResult<FacetDefinition[]> GetFacets()
     {
         ICadmusRepository repository =
             _repositoryProvider.CreateRepository();
@@ -68,7 +69,7 @@ public sealed class FacetController : ControllerBase
     /// Gets the facet with the specified ID.
     /// </summary>
     /// <param name="id">The facet ID.</param>
-    [HttpGet("api/facets/{id}")]
+    [HttpGet("api/facets/{id}", Name = "GetFacet")]
     [Produces("application/json")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
@@ -194,5 +195,35 @@ public sealed class FacetController : ControllerBase
                 return Ok(new { partDef.TypeId });
         }
         return Ok(new { TypeId = (string?)null });
+    }
+
+    /// <summary>
+    /// Add or update the specified facet definition.
+    /// </summary>
+    /// <param name="facet">The facet definition.</param>
+    [Authorize(Roles = "admin")]
+    [HttpPost("api/facets")]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    public IActionResult AddFacet([FromBody] FacetDefinitionBindingModel facet)
+    {
+        ICadmusRepository repository =
+            _repositoryProvider.CreateRepository();
+        repository.AddFacetDefinition(facet.ToFacetDefinition());
+        return CreatedAtRoute("GetFacet", new { id = facet.Id }, null);
+    }
+
+    /// <summary>
+    /// Delete the specified facet definition.
+    /// </summary>
+    /// <param name="id">The facet ID.</param>
+    [Authorize(Roles="admin")]
+    [HttpDelete("api/facets/{id}")]
+    public IActionResult DeleteFacet([FromRoute] string id)
+    {
+        ICadmusRepository repository =
+            _repositoryProvider.CreateRepository();
+        repository.DeleteFacetDefinition(id);
+        return NoContent();
     }
 }
