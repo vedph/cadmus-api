@@ -2056,6 +2056,50 @@
     ]
   },
   "settings": {
+    "models": {
+      "parts": {
+        "it.vedph.bibliography": {
+          "thesauriIds": [
+            "bibliography-types",
+            "bibliography-tags",
+            "bibliography-author-roles",
+            "bibliography-languages"
+          ]
+        },
+        "it.vedph.categories": {
+          "thesauriIds": [ "categories" ]
+        },
+        "it.vedph.chronotopes": {
+          "thesauriIds": [
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        },
+        "it.vedph.comment": {
+          "thesauriIds": [
+            "comment-tags",
+            "comment-id-scopes",
+            "asserted-id-features",
+            "comment-id-tags",
+            "assertion-tags",
+            "comment-categories",
+            "comment-keyword-languages",
+            "comment-keyword-indexes",
+            "comment-keyword-tags"
+          ]
+        },
+        "it.vedph.token-text-layer": {
+          "baseText": true
+        }
+      },
+      "fragments": {
+        "fr.it.vedph.chronology": {
+          "thesauriIds": [ "chronology-tags" ]
+        }
+      }
+    },
     "it.vedph.chronotopes": {
       "placeLookupServiceId": "biblissima",
       "lookupProviderOptions": {
