@@ -1844,7 +1844,7 @@
   "seed": {
     "options": {
       "seed": 1,
-      "users": [ "zeus" ],
+      "users": ["zeus"],
       "partRoles": [],
       "fragmentRoles": []
     },
@@ -1877,8 +1877,8 @@
       {
         "id": "seed.it.vedph.comment",
         "options": {
-          "languages": [ "eng", "ita" ],
-          "categories": [ "language.phonology", "language.syntax", "history" ]
+          "languages": ["eng", "ita"],
+          "categories": ["language.phonology", "language.syntax", "history"]
         }
       },
       {
@@ -1887,13 +1887,7 @@
       {
         "id": "seed.it.vedph.flags",
         "options": {
-          "flags": [
-            "alpha",
-            "beta",
-            "gamma",
-            "delta",
-            "epsilon"
-          ]
+          "flags": ["alpha", "beta", "gamma", "delta", "epsilon"]
         }
       },
       {
@@ -1905,29 +1899,14 @@
       {
         "id": "seed.it.vedph.keywords",
         "options": {
-          "languages": [
-            "eng",
-            "deu",
-            "ita",
-            "fra",
-            "spa"
-          ]
+          "languages": ["eng", "deu", "ita", "fra", "spa"]
         }
       },
       {
         "id": "seed.it.vedph.index-keywords",
         "options": {
-          "indexIds": [
-            "persons",
-            "places"
-          ],
-          "languages": [
-            "eng",
-            "deu",
-            "ita",
-            "fra",
-            "spa"
-          ]
+          "indexIds": ["persons", "places"],
+          "languages": ["eng", "deu", "ita", "fra", "spa"]
         }
       },
       {
@@ -1943,13 +1922,7 @@
             "Sampson,James",
             "Voss,Francis"
           ],
-          "journals": [
-            "AJPh",
-            "CJ",
-            "CPh",
-            "CQ",
-            "IF"
-          ]
+          "journals": ["AJPh", "CJ", "CPh", "CQ", "IF"]
         }
       },
       {
@@ -1967,11 +1940,7 @@
       {
         "id": "seed.it.vedph.note",
         "options": {
-          "tags": [
-            "language",
-            "history",
-            "geography"
-          ]
+          "tags": ["language", "history", "geography"]
         }
       },
       {
@@ -2003,18 +1972,14 @@
       {
         "id": "seed.fr.it.vedph.comment",
         "options": {
-          "languages": [ "eng", "ita" ],
-          "categories": [ "language.phonology", "language.syntax", "history" ]
+          "languages": ["eng", "ita"],
+          "categories": ["language.phonology", "language.syntax", "history"]
         }
       },
       {
         "id": "seed.fr.it.vedph.chronology",
         "options": {
-          "tags": [
-            "bat",
-            "prst",
-            "cos"
-          ]
+          "tags": ["bat", "prst", "cos"]
         }
       },
       {
@@ -2023,11 +1988,7 @@
       {
         "id": "seed.fr.it.vedph.orthography",
         "options": {
-          "tags": [
-            "ph.c.occl.",
-            "ph.c.liq.",
-            "ph.c.nas."
-          ]
+          "tags": ["ph.c.occl.", "ph.c.liq.", "ph.c.nas."]
         }
       },
       {
@@ -2036,21 +1997,13 @@
       {
         "id": "seed.fr.it.vedph.quotations",
         "options": {
-          "authors": [
-            "Fest.",
-            "Diac.",
-            "Isid."
-          ]
+          "authors": ["Fest.", "Diac.", "Isid."]
         }
       },
       {
         "id": "seed.fr.it.vedph.witnesses",
         "options": {
-          "ids": [
-            "Fest.",
-            "Diac.",
-            "Isid."
-          ]
+          "ids": ["Fest.", "Diac.", "Isid."]
         }
       }
     ]
@@ -2058,6 +2011,13 @@
   "settings": {
     "models": {
       "parts": {
+        "it.vedph.asserted-historical-dates": {
+          "thesauriIds": [
+            "asserted-historical-date-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        },
         "it.vedph.bibliography": {
           "thesauriIds": [
             "bibliography-types",
@@ -2067,7 +2027,7 @@
           ]
         },
         "it.vedph.categories": {
-          "thesauriIds": [ "categories" ]
+          "thesauriIds": ["categories"]
         },
         "it.vedph.chronotopes": {
           "thesauriIds": [
@@ -2090,13 +2050,127 @@
             "comment-keyword-tags"
           ]
         },
+        "it.vedph.decorated-counts": {
+          "thesauriIds": ["decorated-count-ids", "decorated-count-tags"]
+        },
+        "it.vedph.district-location": {
+          "thesauriIds": [
+            "district-name-languages",
+            "district-name-piece-types"
+          ]
+        },
+        "it.vedph.doc-references": {
+          "thesauriIds": ["doc-reference-types", "doc-reference-tags"]
+        },
+        "it.vedph.ext-bibliography": {},
+        "it.vedph.external-ids": {
+          "thesauriIds": [
+            "external-id-tags",
+            "external-id-scopes",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        },
+        "it.vedph.flags": {
+          "thesauriIds": ["flags"]
+        },
+        "it.vedph.historical-date": {
+          "thesauriIds": ["doc-reference-types", "doc-reference-tags"]
+        },
+        "it.vedph.historical-events": {
+          "thesauriIds": [
+            "event-types",
+            "event-tags",
+            "chronotope-tags",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags",
+            "event-relations",
+            "pin-link-scopes",
+            "pin-link-tags",
+            "assertion-tags"
+          ]
+        },
+        "it.vedph.index-keywords": {
+          "thesauriIds": ["languages", "keyword-indexes", "keyword-tags"]
+        },
+        "it.vedph.keywords": {
+          "thesauriIds": ["languages"]
+        },
+        "it.vedph.metadata": {
+          "thesauriIds": ["metadata-names", "metadata-types"]
+        },
+        "it.vedph.names": {
+          "thesauriIds": [
+            "name-languages",
+            "name-tags",
+            "name-piece-types",
+            "assertion-tags",
+            "doc-reference-types",
+            "doc-reference-tags"
+          ]
+        },
+        "it.vedph.note": {
+          "thesauriIds": ["note-tags"]
+        },
+        "it.vedph.physical-measurements": {
+          "thesauriIds": [
+            "physical-size-set-names",
+            "physical-size-dim-tags",
+            "physical-size-units"
+          ]
+        },
+        "it.vedph.physical-states": {
+          "thesauriIds": [
+            "physical-states",
+            "physical-state-features",
+            "physical-state-reporters"
+          ]
+        },
+        "it.vedph.pin-links": {
+          "thesauriIds": [
+            "pin-link-scopes",
+            "pin-link-tags",
+            "asserted-id-features",
+            "pin-link-assertion-tags",
+            "pin-link-docref-types",
+            "pin-link-docref-tags"
+          ]
+        },
+        "it.vedph.tiled-text-layer": {
+          "baseText": true
+        },
         "it.vedph.token-text-layer": {
           "baseText": true
         }
       },
       "fragments": {
         "fr.it.vedph.chronology": {
-          "thesauriIds": [ "chronology-tags" ]
+          "thesauriIds": ["chronology-tags"]
+        },
+        "fr.it.vedph.comment": {
+          "thesauriIds": [
+            "comment-tags",
+            "comment-id-scopes",
+            "asserted-id-features",
+            "comment-id-tags",
+            "assertion-tags",
+            "comment-categories",
+            "comment-keyword-languages",
+            "comment-keyword-indexes",
+            "comment-keyword-tags"
+          ]
+        },
+        "fr.it.vedph.pin-links": {
+          "thesauriIds": [
+            "pin-link-scopes",
+            "pin-link-tags",
+            "asserted-id-features",
+            "pin-link-assertion-tags",
+            "pin-link-docref-types",
+            "pin-link-docref-tags"
+          ]
         }
       }
     },
