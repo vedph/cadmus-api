@@ -20,13 +20,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.3" />
-		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.3" />
+		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.5" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.5" />
 		<PackageReference Include="Cadmus.Img.Parts" Version="5.0.0" />
-		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="10.0.3" />
-		<PackageReference Include="Cadmus.Core" Version="10.0.3" />
-		<PackageReference Include="Cadmus.Mongo" Version="10.0.3" />
-		<PackageReference Include="Cadmus.Seed" Version="10.1.2" />
+		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="10.0.4" />
+		<PackageReference Include="Cadmus.Core" Version="10.0.5" />
+		<PackageReference Include="Cadmus.Mongo" Version="10.0.5" />
+		<PackageReference Include="Cadmus.Seed" Version="10.1.4" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="5.0.0" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.2" />

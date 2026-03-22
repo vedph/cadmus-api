@@ -31,6 +31,9 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 13.0.6
+
+- 2026-03-22: updated packages.
 - 2026-03-20:
   - updated packages and increased all version numbers.
   - 🆕 added facet add/delete endpoints to facet controller.
