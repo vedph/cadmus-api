@@ -2171,7 +2171,23 @@
             "pin-link-docref-types",
             "pin-link-docref-tags"
           ]
-        }
+        },
+        "fr.it.vedph.apparatus": {
+          "thesauriIds": [
+            "apparatus-tags",
+            "apparatus-witnesses",
+            "apparatus-authors",
+            "apparatus-author-tags",
+            "author-works"
+          ]
+        },
+        "fr.it.vedph.orthography": {
+          "thesauriIds": [
+            "orthography-languages",
+            "orthography-tags",
+            "orthography-op-tags"
+          ]
+        }        
       }
     },
     "it.vedph.chronotopes": {
