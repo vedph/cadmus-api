@@ -33,7 +33,7 @@ public sealed class StandardItemGraphFactoryProvider
             .ConfigureServices((hostContext, services) =>
             {
                 ItemIndexFactory.ConfigureServices(services,
-                    // Cadmus.Graph.Ef.MySql
+                    // Cadmus.Graph.Ef.PgSql
                     typeof(EfPgSqlGraphRepository).Assembly);
             })
             // extension method from Fusi library
