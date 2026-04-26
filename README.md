@@ -31,7 +31,12 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
-- 2026-04-26: updated packages.
+### 13.0.11
+
+- 2026-04-26:
+  - updated packages.
+  - fixes to logging.
+  - removed MongoDB log sink. Use PostgreSQL log sink instead, which is more robust and performant.
 - 2026-03-30: updated packages and bumped versions of affected libraries.
 
 ### 13.0.6

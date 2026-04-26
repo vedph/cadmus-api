@@ -505,8 +505,11 @@ public static class ServiceConfigurator
     public static void ConfigureLogger(WebApplicationBuilder builder)
     {
         // enable Serilog internal diagnostics so sink failures are not silent
+        string selfLogPath = Path.Combine(
+            AppContext.BaseDirectory, "serilog-selflog.txt");
+        Console.WriteLine($"Serilog SelfLog: {selfLogPath}");
         SelfLog.Enable(msg => File.AppendAllText(
-            "serilog-selflog.txt",
+            selfLogPath,
             $"{DateTime.UtcNow:O} {msg}{Environment.NewLine}"));
 
         // pass all events through MEL; Serilog's own MinimumLevel handles filtering
@@ -527,24 +530,24 @@ public static class ServiceConfigurator
                     rollingInterval: RollingInterval.Day);
             }
 
-            if (IsAuditEnabledFor(hostingContext.Configuration, "Mongo"))
-            {
-                Console.WriteLine("Logging to Mongo enabled");
-                string? cs = hostingContext.Configuration
-                    .GetConnectionString("MongoLog");
+            //if (IsAuditEnabledFor(hostingContext.Configuration, "Mongo"))
+            //{
+            //    Console.WriteLine("Logging to Mongo enabled");
+            //    string? cs = hostingContext.Configuration
+            //        .GetConnectionString("MongoLog");
 
-                if (!string.IsNullOrEmpty(cs))
-                {
-                    int maxSize = hostingContext.Configuration
-                        .GetValue<int>("Serilog:MaxMbSize");
-                    loggerConfiguration.WriteTo.MongoDBBson(cs,
-                        cappedMaxSizeMb: maxSize == 0 ? 10 : maxSize);
-                }
-                else
-                {
-                    Console.WriteLine("Mongo log connection string not found");
-                }
-            }
+            //    if (!string.IsNullOrEmpty(cs))
+            //    {
+            //        int maxSize = hostingContext.Configuration
+            //            .GetValue<int>("Serilog:MaxMbSize");
+            //        loggerConfiguration.WriteTo.MongoDBBson(cs,
+            //            cappedMaxSizeMb: maxSize == 0 ? 10 : maxSize);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Mongo log connection string not found");
+            //    }
+            //}
 
             if (IsAuditEnabledFor(hostingContext.Configuration, "Postgres"))
             {

@@ -14,13 +14,13 @@
 		<Copyright>by Daniele Fusi</Copyright>
 		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 		<PackageTags>Cadmus;API</PackageTags>
-		<Version>11.0.8</Version>
-		<FileVersion>11.0.8</FileVersion>
-		<AssemblyVersion>11.0.8</AssemblyVersion>
+		<Version>11.0.9</Version>
+		<FileVersion>11.0.9</FileVersion>
+		<AssemblyVersion>11.0.9</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.5" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.6" />
 		<PackageReference Include="Fusi.Api.Auth.Controllers" Version="7.0.1" />
 		<PackageReference Include="Fusi.Microsoft.Extensions.Configuration.InMemoryJson" Version="5.0.0" />
 		<PackageReference Include="MessagingApi" Version="6.0.0" />
@@ -36,7 +36,6 @@
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
-		<PackageReference Include="Serilog.Sinks.MongoDB" Version="7.2.0" />
 		<PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.2.0" />
 	</ItemGroup>
 

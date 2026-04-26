@@ -4,9 +4,9 @@
 		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>disable</ImplicitUsings>
-		<Version>13.0.10</Version>
-		<FileVersion>13.0.10</FileVersion>
-		<AssemblyVersion>13.0.10</AssemblyVersion>
+		<Version>13.0.11</Version>
+		<FileVersion>13.0.11</FileVersion>
+		<AssemblyVersion>13.0.11</AssemblyVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -20,13 +20,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.5" />
-		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.5" />
+		<PackageReference Include="Cadmus.Graph.Ef.PgSql" Version="10.0.6" />
+		<PackageReference Include="Cadmus.Graph.Extras" Version="10.0.6" />
 		<PackageReference Include="Cadmus.Img.Parts" Version="5.0.0" />
 		<PackageReference Include="Cadmus.Index.Ef.PgSql" Version="10.0.5" />
-		<PackageReference Include="Cadmus.Core" Version="10.0.5" />
-		<PackageReference Include="Cadmus.Mongo" Version="10.0.5" />
-		<PackageReference Include="Cadmus.Seed" Version="10.1.4" />
+		<PackageReference Include="Cadmus.Core" Version="10.0.6" />
+		<PackageReference Include="Cadmus.Mongo" Version="10.0.6" />
+		<PackageReference Include="Cadmus.Seed" Version="10.1.5" />
 		<PackageReference Include="Cadmus.Seed.General.Parts" Version="8.0.2" />
 		<PackageReference Include="Cadmus.Seed.Img.Parts" Version="5.0.0" />
 		<PackageReference Include="Cadmus.Seed.Philology.Parts" Version="12.0.2" />
@@ -48,7 +48,6 @@
 		<PackageReference Include="Serilog.Extensions.Hosting" Version="10.0.0" />
 		<PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
-		<PackageReference Include="Serilog.Sinks.MongoDB" Version="7.2.0" />
 		<PackageReference Include="Serilog.Sinks.Postgresql.Alternative" Version="4.2.0" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.17.0" />
 		<PackageReference Include="TaxoStore.Api.Controllers" Version="0.0.3" />
