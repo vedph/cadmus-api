@@ -17,6 +17,7 @@ using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using NpgsqlTypes;
 using Serilog;
+using Serilog.Debugging;
 using Serilog.Sinks.PostgreSQL;
 using Serilog.Sinks.PostgreSQL.ColumnWriters;
 using System.Collections;
@@ -501,22 +502,23 @@ public static class ServiceConfigurator
             needAutoCreateTable: true, needAutoCreateSchema: true);
     }
 
-    public static void ConfigureLogging(IServiceCollection services)
-    {
-        services.AddSingleton(sp =>
-        {
-            ILoggerFactory factory = sp.GetRequiredService<ILoggerFactory>();
-            return factory.CreateLogger("Logger");
-        });
-    }
-
     public static void ConfigureLogger(WebApplicationBuilder builder)
     {
+        // enable Serilog internal diagnostics so sink failures are not silent
+        SelfLog.Enable(msg => File.AppendAllText(
+            "serilog-selflog.txt",
+            $"{DateTime.UtcNow:O} {msg}{Environment.NewLine}"));
+
+        // pass all events through MEL; Serilog's own MinimumLevel handles filtering
+        builder.Logging.SetMinimumLevel(LogLevel.Trace);
+
         builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
         {
             // https://github.com/serilog/serilog-settings-configuration
-            loggerConfiguration.ReadFrom.Configuration(
-                hostingContext.Configuration);
+            loggerConfiguration
+                .ReadFrom.Configuration(hostingContext.Configuration)
+                .Enrich.FromLogContext()
+                .Enrich.WithProperty("MachineName", Environment.MachineName);
 
             if (IsAuditEnabledFor(hostingContext.Configuration, "File"))
             {
@@ -535,8 +537,8 @@ public static class ServiceConfigurator
                 {
                     int maxSize = hostingContext.Configuration
                         .GetValue<int>("Serilog:MaxMbSize");
-                    loggerConfiguration.WriteTo.MongoDBCapped(cs,
-                        cappedMaxSizeMb: maxSize == 0 ? 10 : 0);
+                    loggerConfiguration.WriteTo.MongoDBBson(cs,
+                        cappedMaxSizeMb: maxSize == 0 ? 10 : maxSize);
                 }
                 else
                 {
@@ -601,8 +603,5 @@ public static class ServiceConfigurator
 
         // messaging
         ConfigureMessagingServices(services);
-
-        // logging
-        ConfigureLogging(services);
     }
 }

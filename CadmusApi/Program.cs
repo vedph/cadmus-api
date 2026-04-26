@@ -2,7 +2,6 @@ using Cadmus.Api.Services;
 using Cadmus.Api.Services.Seeding;
 using Cadmus.Core;
 using CadmusApi.Services;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using System.Diagnostics;
@@ -86,7 +85,6 @@ public static class Program
         try
         {
             Log.Information("Starting Cadmus API host");
-            ServiceConfigurator.DumpEnvironmentVars();
 
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
             ServiceConfigurator.ConfigureLogger(builder);
@@ -125,6 +123,7 @@ public static class Program
                 .AddControllersAsServices();
 
             WebApplication app = builder.Build();
+            ServiceConfigurator.DumpEnvironmentVars();
 
             // forward headers for use with an eventual reverse proxy
             app.UseForwardedHeaders(new ForwardedHeadersOptions
