@@ -188,7 +188,7 @@ public sealed class ProxyController(HttpClient httpClient) : ControllerBase
             // forward non-restricted headers from the original request
             foreach (var header in Request.Headers)
             {
-                if (!RestrictedHeaders.Contains(header.Key) && 
+                if (!RestrictedHeaders.Contains(header.Key) &&
                     !request.Headers.Contains(header.Key) &&
                     header.Key != "Accept" && header.Key != "User-Agent")
                 {
@@ -204,7 +204,7 @@ public sealed class ProxyController(HttpClient httpClient) : ControllerBase
             if (response.IsSuccessStatusCode)
             {
                 string content = await response.Content.ReadAsStringAsync();
-                
+
                 // determine content type
                 string responseContentType;
                 if (!string.IsNullOrWhiteSpace(contentType))

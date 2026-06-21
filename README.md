@@ -31,6 +31,10 @@ Both these services depend on the parts you choose to support, so they are imple
 
 ## History
 
+### 13.0.12
+
+- 2026-06-21: updated packages.
+
 ### 13.0.11
 
 - 2026-04-26:
