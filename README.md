@@ -1,5 +1,7 @@
 # Cadmus API
 
+⚠️⚠️⚠️ **THIS IS OBSOLETE CODE. SEE <https://github.com/vedph/cadmus-core>** ⚠️⚠️⚠️
+
 👀 [Cadmus Page](https://myrmex.github.io/overview/cadmus/)
 
 👉 This is version 10+ of the Cadmus API. The [previous version](https://github.com/vedph/cadmus_api) is meant to be used for legacy projects before the upgrade to .NET 9. This upgrade implies many infrastructural changes which are better implemented in a separate repository. New Cadmus projects will use this version.
